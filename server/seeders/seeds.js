@@ -1,18 +1,7 @@
 const db = require("../config/connection");
+const userSeeds = require ("./userSeeds.json")
 const { User } = require("../models");
 
-const userSeeds = [
-  {
-    username: "John Doe",
-    email: "johndoe@example.com",
-    password: "password123",
-  },
-  {
-    username: "Jane Smith",
-    email: "janesmith@example.com",
-    password: "password456",
-  },
-];
 
 db.once("open", async () => {
   try {

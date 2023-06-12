@@ -13,8 +13,22 @@ const typeDefs = gql`
     getUsers: [User!]!
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+  type Comment {
+    _id: ID
+    commentText: String
+    commentAuthor: String
+    createdAt: String
+  }
+
   type Mutation {
-    createUser(username: String!, email: String!, password: String!): User!
+    login(email: String!, password: String!): Auth
+    createUser(username: String!, email: String!, password: String!): Auth
+    addComment(thoughtId: ID!, commentText: String!): Comment
     updateUser(id: ID!, username: String!, email: String!): User!
     deleteUser(id: ID!): User!
   }
