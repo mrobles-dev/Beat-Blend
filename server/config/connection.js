@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const connectionURL = 'mongodb+srv://bradfh:brad@cluster1.ieklju5.mongodb.net/Beat-Blend'
+const connectionURL = "mongodb://localhost:27017/Beat-Blend";
 
 mongoose.connect(connectionURL, {
   useNewUrlParser: true,
@@ -16,3 +16,7 @@ mongoose.connect(connectionURL, {
 mongoose.set('debug', true);
 
 module.exports = mongoose.connection;
+
+
+
+///mongodb://localhost:27017/

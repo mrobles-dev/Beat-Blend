@@ -1,4 +1,5 @@
-const { User } = require('../models');
+const { User, Comments } = require('../models');
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -8,7 +9,7 @@ const resolvers = {
         return user;
       } catch (error) {
         console.error(error);
-      throw new Error('Failed to fetch user');
+        throw new Error("Failed to fetch user");
       }
     },
     getUsers: async () => {
@@ -17,7 +18,7 @@ const resolvers = {
         return users;
       } catch (error) {
         console.error(error);
-      throw new Error('Failed to fetch users');
+        throw new Error("Failed to fetch users");
       }
     },
   },
@@ -28,16 +29,54 @@ const resolvers = {
         return user;
       } catch (error) {
         console.error(error);
-      throw new Error('Failed to create user');
+        throw new Error("Failed to create user");
       }
+    },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError("No user found with this email address");
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect credentials");
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
+    },
+    addComment: async (parent, { commentText }, context) => {
+      if (context.user) {
+        return Comment.findOneAndUpdate(
+          { _id: commentId },
+          {
+            $addToSet: {
+              comments: { commentText, commentAuthor: context.user.username },
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
     updateUser: async (_, { id, username, email }) => {
       try {
-        const user = await User.findByIdAndUpdate(id, { username, email }, { new: true });
+        const user = await User.findByIdAndUpdate(
+          id,
+          { username, email },
+          { new: true }
+        );
         return user;
       } catch (error) {
         console.error(error);
-      throw new Error('Failed to update user');
+        throw new Error("Failed to update user");
       }
     },
   },
