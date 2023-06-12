@@ -1,9 +1,16 @@
 const mongoose = require("mongoose");
 
-const connectionURL
+const connectionURL = 'mongodb+srv://bradfh:brad@cluster1.ieklju5.mongodb.net/'
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/beatBlendDB"
-);
+mongoose.connect(connectionURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => {
+  console.log('Connected to database');
+})
+.catch((error) => {
+  console.error('Error connecting to MongoDB', error);
+});
 
 module.exports = mongoose.connection;
