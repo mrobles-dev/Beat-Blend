@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
-const User = require('./models/User');
+const User = require('./models/');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -21,7 +21,7 @@ app.use(express.json());
 
 app.post('/signup', async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { username, email, password } = req.body;
     
     const existingUser = await User.findOne({ email });
     if(existingUser) {
@@ -30,7 +30,7 @@ app.post('/signup', async (req, res) => {
     
     const hashedPassword = await bcrypt.hash(password, 10);
     
-    const newUser = await User.create({ name, email, password: hashedPassword });
+    const newUser = await User.create({ username, email, password: hashedPassword });
     
     res.status(201).json({ user: newUser });
   } catch (error) {

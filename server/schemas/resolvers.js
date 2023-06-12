@@ -1,34 +1,46 @@
-const { AuthenticationError } = require("apollo-server-express");
-const { User } = require("../models");
-const { signToken } = require("../utils/auth");
+const { User } = require('../models');
 
 const resolvers = {
   Query: {
-    
-
+    getUser: async (_, { id }) => {
+      try {
+        const user = await User.findById(id);
+        return user;
+      } catch (error) {
+        console.error(error);
+      throw new Error('Failed to fetch user');
+      }
+    },
+    getUsers: async () => {
+      try {
+        const users = await User.find({});
+        return users;
+      } catch (error) {
+        console.error(error);
+      throw new Error('Failed to fetch users');
+      }
+    },
+  },
   Mutation: {
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
-      const token = signToken(user);
-      return { token, user };
-    },
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
-
-      if (!user) {
-        throw new AuthenticationError("No user found with this email address");
+    createUser: async (_, { username, email, password }) => {
+      try {
+        const user = await User.create({ username, email, password });
+        return user;
+      } catch (error) {
+        console.error(error);
+      throw new Error('Failed to create user');
       }
-
-      const correctPw = await user.isCorrectPassword(password);
-
-      if (!correctPw) {
-        throw new AuthenticationError("Incorrect credentials");
-      }
-
-      const token = signToken(user);
-
-      return { token, user };
     },
-   
+    updateUser: async (_, { id, username, email }) => {
+      try {
+        const user = await User.findByIdAndUpdate(id, { username, email }, { new: true });
+        return user;
+      } catch (error) {
+        console.error(error);
+      throw new Error('Failed to update user');
+      }
+    },
+  },
+};
 
 module.exports = resolvers;

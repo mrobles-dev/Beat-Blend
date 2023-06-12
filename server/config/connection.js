@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const connectionURL = 'mongodb+srv://bradfh:brad@cluster1.ieklju5.mongodb.net/'
+const connectionURL = 'mongodb+srv://bradfh:brad@cluster1.ieklju5.mongodb.net/Beat-Blend'
 
 mongoose.connect(connectionURL, {
   useNewUrlParser: true,
@@ -12,5 +12,7 @@ mongoose.connect(connectionURL, {
 .catch((error) => {
   console.error('Error connecting to MongoDB', error);
 });
+
+mongoose.set('debug', true);
 
 module.exports = mongoose.connection;
