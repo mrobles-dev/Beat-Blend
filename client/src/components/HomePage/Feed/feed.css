@@ -89,7 +89,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
     .mainFeedContainer {
       flex-direction: column;
     }
@@ -154,8 +154,8 @@
   
     .middleContainer {
       width: 100%;
-      /* border-right: none;
-      border-left: none; */
+      border-right: none;
+      border-left: none;
     }
   
     .feedHeader {
@@ -163,4 +163,4 @@
       font-size: 1.5rem;
       padding-block: 0.5rem;
     }
-  }
+  } */

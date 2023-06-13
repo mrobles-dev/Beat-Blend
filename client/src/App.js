@@ -4,13 +4,8 @@ import HomePage from './components/HomePage/HomePage'
 
 
 function App() {
-  const [page, setPage] = useState('Feed');
-
-  const handlePageChange = (pageName) => {
-    setPage(pageName);
-  }
-
-  return <HomePage page={page} handlePageChange={handlePageChange}/>;
+  // return <Landing />
+  return <HomePage />;
 }
 
 export default App;

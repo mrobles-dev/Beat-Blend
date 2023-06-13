@@ -179,3 +179,79 @@
     cursor: pointer;
     transform: scale(1.05)
 }
+
+@media screen and (max-width: 1000px) {
+    .mainFeedContainer {
+      flex-direction: column;
+    }
+  
+    .leftContainer,
+    .rightContainer {
+      width: 100%;
+      height: auto;
+    }
+  
+    .middleContainer {
+      width: 100%;
+      border-right: none;
+      border-left: none;
+    }
+  
+    .feedHeader {
+      font-size: 2rem;
+    }
+  
+    .feed {
+      height: auto;
+      width: 100%;
+    }
+  
+    .feedElement {
+      width: 100%;
+      max-width: 300px;
+  
+    }
+  
+    .recordingContainer {
+      width: 100%;
+      max-width: fit-content;
+    }
+  
+    .playBar {
+      width: 100%;
+      max-width: fit-content;
+    }
+  
+    .pfp,
+    .playBtn,
+    .download {
+      max-width: 5%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .mainFeedContainer {
+      width: 100%;
+      margin: 0;
+      flex-direction: column;
+  
+    }
+  
+    .leftContainer,
+    .rightContainer {
+      width: 100%;
+      height: auto;
+    }
+  
+    .middleContainer {
+      width: 100%;
+      /* border-right: none;
+      border-left: none; */
+    }
+  
+    .feedHeader {
+      width: 100%;
+      font-size: 1.5rem;
+      padding-block: 0.5rem;
+    }
+  }

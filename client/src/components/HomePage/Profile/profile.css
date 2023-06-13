@@ -1,0 +1,90 @@
+.profileHeader {
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    padding-block: 1rem;
+    color: var(--black);
+    border-bottom: solid white 1px;
+    background: rgb(190,76,76);
+}
+
+.mainProfileContainer {
+    border-right: solid white 1px;
+    border-left: solid white 1px;
+    height: 82vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.userProfileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: #272727; */
+}
+
+.profilePfp {
+    max-width: 25%;
+    margin-top: 3rem;
+    border-radius: 1rem;
+}
+
+.profileName {
+    color: var(--gray);
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: rgb(196, 196, 196);
+}
+
+.profileUsername {
+    color: var(--gray);
+    /* margin: .5rem; */
+    font-size: 1.75rem;
+    color: var(--red)
+}
+
+.profileBio {
+    font-size: 1rem;
+    color: var(--gray);
+    text-align: center;
+    margin: 1rem;
+
+}
+
+.profileButtons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    background: #797878;
+}
+
+.profileBtn {
+    background: var(--gray);
+    color: #272727;
+    font-size: 1.75rem;
+    margin: 1rem;
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    transition: background-color .5s, box-shadow .5s, transform .5s;
+}
+
+.profileBtn:hover {
+    cursor: pointer;
+    background-color: #dda3a3;
+    box-shadow: 0px 0px 15px 0px #d98282;
+}
+
+.active {
+    background-color: #be4c4c;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px #d98282;
+}
+
+.active:hover {
+    background-color: #be4c4c;
+}
