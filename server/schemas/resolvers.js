@@ -32,6 +32,7 @@ const resolvers = {
     },
     getComments: async () => {
       try {
+        console.log('anything')
         const comments = await Comment.find({});
         return comments;
       } catch (error) {

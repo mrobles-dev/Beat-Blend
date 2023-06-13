@@ -6,30 +6,24 @@ const typeDefs = gql`
     username: String!
     email: String!
     password: String!
+    Comments: [Comment]!
   }
-
-  type Query {
-    getUser(id: ID!): User!
-    getUsers: [User!]!
-    getComments: [Comment!]!
-  }
-
-  type Auth {
-    token: ID!
-    user: User
-  }
-
   type Comment {
     _id: ID
     commentText: String
     commentAuthor: String
     createdAt: String
   }
+  type Auth {
+    token: ID!
+    user: User
+  }
 
   type Query {
-    getComment(id: ID!): Comment!
-    getComments: [Comment!]!
+    getUser(id: ID!): User!
     getUsers: [User!]!
+    getComments: [Comment]
+    getComment(commentId: ID!): Comment
   }
 
   type Mutation {
@@ -38,6 +32,7 @@ const typeDefs = gql`
     addComment(commentId: ID!, commentText: String!): Comment
     updateUser(id: ID!, username: String!, email: String!): User!
     deleteUser(id: ID!): User!
+    userName: String
   }
 `;
 
