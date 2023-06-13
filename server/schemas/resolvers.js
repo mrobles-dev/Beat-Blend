@@ -1,4 +1,3 @@
-
 const { User, Comment } = require('../models');
 const { signToken } = require("../utils/auth");
 
@@ -22,7 +21,6 @@ const resolvers = {
         throw new Error("Failed to fetch users");
       }
     },
-
     getComment: async (_, { id }) => {
       try {
         const comment = await Comment.findById(id);
@@ -35,7 +33,6 @@ const resolvers = {
     getComments: async () => {
       try {
         console.log('anything')
-
         const comments = await Comment.find({});
         return comments;
       } catch (error) {

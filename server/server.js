@@ -33,9 +33,8 @@ app.post('/signup', async (req, res) => {
       return res.status(409).json({ message: 'User already exists' });
     }
     
-    const hashedPassword = await bcrypt.hash(password, 10);
     
-    const newUser = await User.create({ username, email, password: hashedPassword });
+    const newUser = await User.create({ username, email, password });
     
     res.status(201).json({ user: newUser });
   } catch (error) {
@@ -52,12 +51,13 @@ app.post('/login', async (req, res) => {
     
     const user = await User.findOne({ username });
     if (!user) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      return res.status(401).json({ message: 'Invalid username' });
     }
     
-    const isPasswordValid = await bcrypt.compare(password, user.password);
+    const trimmedPassword = password.trim();
+    const isPasswordValid = await user.isCorrectPassword(trimmedPassword);
     if (!isPasswordValid) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      return res.status(401).json({ message: 'Invalid password' });
     }
     
     const token = jwt.sign({ userId: user._id}, 'your-secret-key');
@@ -67,6 +67,25 @@ app.post('/login', async (req, res) => {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
   }
+});
+
+app.get('/home', async (req, res) => {
+  if (!req.user) {
+    return res.status(401).json({ message: "Not Allowed." });
+    }
+
+    try {
+      const user = await User.findOne(req.user.userId);
+
+      if (!user) {
+        return res.status(404).json({ message: "User not found." });
+      }
+
+      res.json({ message: "Welcome to the home page!", user: userData });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Server error." });
+    }
 });
 
 app.post('/logout', (req, res) => {
