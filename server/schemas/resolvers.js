@@ -1,4 +1,4 @@
-const { User, Comments } = require('../models');
+const User = require('../models/User');
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -21,6 +21,15 @@ const resolvers = {
         throw new Error("Failed to fetch users");
       }
     },
+    getComments: async () => {
+      try {
+        const comments = await Comment.find({});
+        return comments;
+      } catch (error) {
+        console.error(error);
+        throw new Error("Failed to fetch comments");
+      }
+    }
   },
   Mutation: {
     createUser: async (_, { username, email, password }) => {
@@ -52,7 +61,7 @@ const resolvers = {
     addComment: async (parent, { commentText }, context) => {
       if (context.user) {
         return Comment.findOneAndUpdate(
-          { _id: commentId },
+          { _id: thoughtId },
           {
             $addToSet: {
               comments: { commentText, commentAuthor: context.user.username },
