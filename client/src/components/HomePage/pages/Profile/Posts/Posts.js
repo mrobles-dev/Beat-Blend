@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import pfp from "../../../photos/pfp placeholder.png";
-import pfpNav from "../../../photos/pfp nav.png";
-import play from "../../../photos/play button.png";
-import playBar from "../../../photos/play bar.png";
-import download from "../../../photos/download.png";
-import heart from "../../../photos/heart.png";
-import liked from "../../../photos/heart full.png";
+import pfp from "../../../../photos/pfp placeholder.png";
+import pfpNav from "../../../../photos/pfp nav.png";
+import play from "../../../../photos/play button.png";
+import playBar from "../../../../photos/play bar.png";
+import download from "../../../../photos/download.png";
+import heart from "../../../../photos/heart.png";
+import liked from "../../../../photos/heart full.png";
 
 const Posts = () => {
   const [like, setLike] = useState(false);
