@@ -11,6 +11,7 @@ const typeDefs = gql`
   type Query {
     getUser(id: ID!): User!
     getUsers: [User!]!
+    getComments: [Comment!]!
   }
 
   type Auth {
