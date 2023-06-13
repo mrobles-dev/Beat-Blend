@@ -37,3 +37,8 @@ h1 {
     border-bottom: solid black;
     color: var(--gray);
 }
+
+.hamburgerMenu {
+    display: flex;
+    /* display: none; */
+}

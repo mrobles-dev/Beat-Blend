@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import HeaderNav from "../Header/HeaderNav";
 import "./homePage.css";
-import Feed from "./Feed/Feed";
-import Profile from "./Profile/Profile";
+import Feed from "./pages/Feed/Feed";
+import Profile from "./pages/Profile/Profile";
 import pfp from "../photos/pfp placeholder.png";
+import Notifications from "./pages/Notifications/Notifications"
 
 const HomePage = () => {
   // <img className='imgNav' src={pfpNav}></img>
@@ -23,6 +24,9 @@ const HomePage = () => {
     if (page === "Profile") {
       return <Profile />;
     }
+    if (page === 'Notifications') {
+      return <Notifications />
+    }
   };
 
   const handlePageChange = (pageName) => {
@@ -33,9 +37,9 @@ const HomePage = () => {
     <>
       <HeaderNav />
       <div className="mainHomeContainer">
+          {/* LEFT NAVIGATION */}
         <div className="leftContainer">
           {" "}
-          {/* navigation */}
           <div className="navHeader">Navigation</div>
           <ul>
             <li className="listEle">
@@ -45,7 +49,7 @@ const HomePage = () => {
                   page === "Feed" ? "navContent activeNav" : "navContent"
                 }
               >
-                <div>Feed</div>
+                <div className="navLink">Feed</div>
               </div>
             </li>
             <li className="listEle">
@@ -55,7 +59,7 @@ const HomePage = () => {
                   page === "Profile" ? "navContent activeNav" : "navContent"
                 }
               >
-                <div>Profile</div>
+                <div className="navLink">Profile</div>
               </div>
             </li>
             <li className="listEle">
@@ -65,7 +69,7 @@ const HomePage = () => {
                   page === "Recordings" ? "navContent activeNav" : "navContent"
                 }
               >
-                <div>Recordings</div>
+                <div className="navLink">Recordings</div>
               </div>
             </li>
             <li className="listEle">
@@ -75,7 +79,7 @@ const HomePage = () => {
                   page === "Favorites" ? "navContent activeNav" : "navContent"
                 }
               >
-                <div>Favorites</div>
+                <div className="navLink">Favorites</div>
               </div>
             </li>
             <li className="listEle">
@@ -87,7 +91,7 @@ const HomePage = () => {
                     : "navContent"
                 }
               >
-                <div>Notifications</div>
+                <div className="navLink">Notifications</div>
               </div>
             </li>
             <li className="listEle">
@@ -97,7 +101,7 @@ const HomePage = () => {
                   page === "Search" ? "navContent activeNav" : "navContent"
                 }
               >
-                <div>Search</div>
+                <div className="navLink">Search</div>
               </div>
             </li>
             <li className="listEle">
@@ -107,16 +111,18 @@ const HomePage = () => {
                   page === "Settings" ? "navContent activeNav" : "navContent"
                 }
               >
-                <div>Settings</div>
+                <div className="navLink">Settings</div>
               </div>
             </li>
           </ul>
         </div>
+        {/* MAIN MIDDLE FEED */}
         <div className="middleContainer">
           {" "}
           {/* changing */}
           {renderMiddle()}
         </div>
+        {/* RIGHT CONTAINER */}
         <div className="rightContainer">
           <div className="newPostHeader">New Post</div>
           <div className="formContainer">
@@ -126,6 +132,7 @@ const HomePage = () => {
                 <div className="username">@you</div>
               </div>
             </div>
+            {/* TEXT INPUT */}
             <form className="form">
               <p>
                 <span className={length > 200 ? "red" : "green"}>{length}</span>
@@ -138,6 +145,7 @@ const HomePage = () => {
                 rows="4"
               />
             </form>
+            {/* UPLOAD CONTAINER */}
             <div className="uploadContainer">
               <div className="upload postBtn">Upload Audio</div>
               <div className="upload postBtn">Monetize?</div>

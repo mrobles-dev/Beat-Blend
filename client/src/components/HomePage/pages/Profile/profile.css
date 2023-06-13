@@ -1,16 +1,17 @@
 .profileHeader {
     text-align: center;
     width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
     padding-block: 1rem;
     color: var(--black);
-    border-bottom: solid white 1px;
+    text-shadow: 0px 0px 10px #00000026;
+    border-bottom: solid rgba(255, 255, 255, 0.232) 1px;
     background: rgb(190,76,76);
 }
 
 .mainProfileContainer {
-    border-right: solid white 1px;
-    border-left: solid white 1px;
+    border-right: solid rgba(255, 255, 255, 0.232) 1px;
+    border-left: solid rgba(255, 255, 255, 0.232) 1px;
     height: 82vh;
     width: 100%;
     display: flex;
@@ -30,6 +31,7 @@
     max-width: 25%;
     margin-top: 3rem;
     border-radius: 1rem;
+    box-shadow: 0px 0px 30px 0px #00000088;
 }
 
 .profileName {
@@ -41,21 +43,21 @@
 
 .profileUsername {
     color: var(--gray);
-    /* margin: .5rem; */
-    font-size: 1.75rem;
+    margin-top: .5rem;
+    font-size: 1.25rem;
     color: var(--red)
 }
 
 .profileBio {
     font-size: 1rem;
-    color: var(--gray);
+    color: white;
     text-align: center;
     margin: 1rem;
-
 }
 
 .profileButtons {
     width: 100%;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-around;
     position: sticky;
@@ -66,7 +68,7 @@
 .profileBtn {
     background: var(--gray);
     color: #272727;
-    font-size: 1.75rem;
+    font-size: 1rem;
     margin: 1rem;
     padding: .75rem 1.5rem;
     border-radius: .5rem;
@@ -76,13 +78,13 @@
 .profileBtn:hover {
     cursor: pointer;
     background-color: #dda3a3;
-    box-shadow: 0px 0px 15px 0px #d98282;
+    box-shadow: 0px 0px 30px 0px #00000088;
 }
 
 .active {
     background-color: #be4c4c;
     transform: scale(1.1);
-    box-shadow: 0px 0px 15px 0px #d98282;
+    /* box-shadow: 0px 0px 15px 0px #d98282; */
 }
 
 .active:hover {
