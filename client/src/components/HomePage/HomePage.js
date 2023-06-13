@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import HeaderNav from "../Header/HeaderNav";
 import "./homePage.css";
 import Feed from "./Feed/Feed";
+import Profile from "./Profile/Profile";
 import pfp from "../photos/pfp placeholder.png";
 
-const HomePage = ({ page, handlePageChange }) => {
+const HomePage = () => {
   // <img className='imgNav' src={pfpNav}></img>
   const [length, setLength] = useState(0);
   function countLength() {
@@ -12,6 +13,21 @@ const HomePage = ({ page, handlePageChange }) => {
     var string = textarea.value;
     setLength(string.length);
   }
+
+  const [page, setPage] = useState("Feed");
+
+  const renderMiddle = () => {
+    if (page === "Feed") {
+      return <Feed />;
+    }
+    if (page === "Profile") {
+      return <Profile />;
+    }
+  };
+
+  const handlePageChange = (pageName) => {
+    setPage(pageName);
+  };
 
   return (
     <>
@@ -99,7 +115,7 @@ const HomePage = ({ page, handlePageChange }) => {
         <div className="middleContainer">
           {" "}
           {/* changing */}
-          <Feed />
+          {renderMiddle()}
         </div>
         <div className="rightContainer">
           <div className="newPostHeader">New Post</div>
@@ -119,7 +135,7 @@ const HomePage = ({ page, handlePageChange }) => {
                 id="textInput"
                 placeholder="Type your message here... (200 char max)"
                 onChange={countLength}
-                rows='4'
+                rows="4"
               />
             </form>
             <div className="uploadContainer">
