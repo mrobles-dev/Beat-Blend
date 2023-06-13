@@ -21,13 +21,22 @@ const resolvers = {
         throw new Error("Failed to fetch users");
       }
     },
-    getComments: async () => {
+    getComment: async (_, { id }) => {
       try {
-        const comment = await Comment.find({});
+        const comment = await Comment.findById(id);
         return comment;
       } catch (error) {
         console.error(error);
-        throw new Error("Failed to fetch users");
+        throw new Error("Failed to fetch user");
+      }
+    },
+    getComments: async () => {
+      try {
+        const comments = await Comment.find({});
+        return comments;
+      } catch (error) {
+        console.error(error);
+        throw new Error("Failed to fetch comments");
       }
     },
   },
@@ -61,7 +70,7 @@ const resolvers = {
     addComment: async (parent, { commentText }, context) => {
       if (context.user) {
         return Comment.findOneAndUpdate(
-          { _id: Comments },
+          { _id: Comment },
           {
             $addToSet: {
               comments: { commentText, commentAuthor: context.user.username },
