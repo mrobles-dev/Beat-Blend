@@ -23,6 +23,7 @@ const Feed = () => {
   return (
     <>
       <div className="feedHeader">Your Feed</div>
+      
       <div className="feed">
         <div className="feedElement">
           <div className="topBar">
