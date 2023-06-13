@@ -1,19 +1,15 @@
 .profileHeader {
     text-align: center;
     width: 100%;
-    /* font-size: 3rem; */
     font-size: 2rem;
     padding-block: 1rem;
     color: var(--black);
     text-shadow: 0px 0px 10px #00000026;
-    /* border-bottom: solid white 1px; */
     border-bottom: solid rgba(255, 255, 255, 0.232) 1px;
     background: rgb(190,76,76);
 }
 
 .mainProfileContainer {
-    /* border-right: solid white 1px; */
-    /* border-left: solid white 1px; */
     border-right: solid rgba(255, 255, 255, 0.232) 1px;
     border-left: solid rgba(255, 255, 255, 0.232) 1px;
     height: 82vh;
@@ -48,7 +44,6 @@
 .profileUsername {
     color: var(--gray);
     margin-top: .5rem;
-    /* font-size: 1.75rem; */
     font-size: 1.25rem;
     color: var(--red)
 }
@@ -58,7 +53,6 @@
     color: white;
     text-align: center;
     margin: 1rem;
-
 }
 
 .profileButtons {
@@ -84,7 +78,6 @@
 .profileBtn:hover {
     cursor: pointer;
     background-color: #dda3a3;
-    /* box-shadow: 0px 0px 15px 0px #d98282; */
     box-shadow: 0px 0px 30px 0px #00000088;
 }
 

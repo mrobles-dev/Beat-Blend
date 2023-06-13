@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import HeaderNav from "../Header/HeaderNav";
 import "./homePage.css";
-import Feed from "./Feed/Feed";
-import Profile from "./Profile/Profile";
+import Feed from "./pages/Feed/Feed";
+import Profile from "./pages/Profile/Profile";
 import pfp from "../photos/pfp placeholder.png";
+import Notifications from "./pages/Notifications/Notifications"
 
 const HomePage = () => {
   // <img className='imgNav' src={pfpNav}></img>
@@ -22,6 +23,9 @@ const HomePage = () => {
     }
     if (page === "Profile") {
       return <Profile />;
+    }
+    if (page === 'Notifications') {
+      return <Notifications />
     }
   };
 

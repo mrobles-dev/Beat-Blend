@@ -1,7 +1,7 @@
 import React from "react";
 import "./recordings.css";
-import playBar from '../../../photos/small play bar.png'
-import playBtn from '../../../photos/play button.png'
+import playBar from '../../../../photos/small play bar.png'
+import playBtn from '../../../../photos/play button.png'
 
 const Recordings = () => {
   return (
