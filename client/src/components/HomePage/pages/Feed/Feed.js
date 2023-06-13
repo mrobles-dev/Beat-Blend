@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import './feed.css'
-import pfp from "../../photos/pfp placeholder.png";
-import pfpNav from "../../photos/pfp nav.png";
-import play from "../../photos/play button.png";
-import playBar from "../../photos/play bar.png";
-import download from "../../photos/download.png";
-import heart from "../../photos/heart.png";
-import liked from "../../photos/heart full.png";
+import pfp from "../../../photos/pfp placeholder.png";
+import pfpNav from "../../../photos/pfp nav.png";
+import play from "../../../photos/play button.png";
+import playBar from "../../../photos/play bar.png";
+import download from "../../../photos/download.png";
+import heart from "../../../photos/heart.png";
+import liked from "../../../photos/heart full.png";
 
 const Feed = () => {
   const [like, setLike] = useState(false);
@@ -23,7 +23,6 @@ const Feed = () => {
   return (
     <>
       <div className="feedHeader">Your Feed</div>
-      
       <div className="feed">
         <div className="feedElement">
           <div className="topBar">

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./profile.css";
-import pfp from "../../photos/pfp placeholder.png";
+import pfp from "../../../photos/pfp placeholder.png";
 import Posts from "./Posts/Posts";
 import Recordings from "./Recordings/Recordings";
+
 
 const Profile = () => {
   const [botHalf, setBotHalf] = useState("Posts");
@@ -14,6 +15,7 @@ const Profile = () => {
     if (botHalf === "Recordings") {
       return <Recordings />;
     }
+
   };
 
   const handleBotHalfChange = (prop) => {
