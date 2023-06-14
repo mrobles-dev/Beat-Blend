@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./profile.css";
 import pfp from "../../../photos/pfp placeholder.png";
 import Posts from "./Posts/Posts";
-import Recordings from "./Recordings/Recordings";
+import MyRecordings from "./myRecordings/myRecordings";
 
 
 const Profile = () => {
@@ -12,8 +12,8 @@ const Profile = () => {
     if (botHalf === "Posts") {
       return <Posts />;
     }
-    if (botHalf === "Recordings") {
-      return <Recordings />;
+    if (botHalf === "myRecordings") {
+      return <MyRecordings />;
     }
 
   };
@@ -46,11 +46,11 @@ const Profile = () => {
           </div>
           <div
             className={
-              botHalf === "Recordings" ? "profileBtn active" : "profileBtn"
+              botHalf === "myRecordings" ? "profileBtn active" : "profileBtn"
             }
-            onClick={() => handleBotHalfChange("Recordings")}
+            onClick={() => handleBotHalfChange("myRecordings")}
           >
-            Recordings
+            My Recordings
           </div>
         </div>
         {botHalfRender()}

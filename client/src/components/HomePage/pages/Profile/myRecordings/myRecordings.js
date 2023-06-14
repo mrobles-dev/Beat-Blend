@@ -1,9 +1,9 @@
 import React from "react";
-import "./recordings.css";
+import "./myrecordings.css";
 import playBar from '../../../../photos/small play bar.png'
 import playBtn from '../../../../photos/play button.png'
 
-const Recordings = () => {
+const myRecordings = () => {
   return (
     <>
       <div className='mainRecordingContainer'>
@@ -77,4 +77,4 @@ const Recordings = () => {
   );
 };
 
-export default Recordings;
+export default myRecordings;

@@ -92,9 +92,9 @@ export default function App() {
         showVisualizer={true}
       />
       <br />
-      <button onClick={recorderControls.stopRecording}>Stop recording</button>
+      <button className="stopRecord" onClick={recorderControls.stopRecording}>Stop recording</button>
       <br />
-      <button onClick={handlePlayback}>Play All</button>
+      <button className="" onClick={handlePlayback}>Play All</button>
       <div>
         {audioElements.map((audio, index) => (
           <div key={index}>
