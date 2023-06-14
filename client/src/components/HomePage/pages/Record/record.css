@@ -1,4 +1,4 @@
-.searchHeader {
+.recordHeader {
     text-align: center;
     width: 100%;
     font-size: 2rem;
@@ -8,21 +8,10 @@
     background: rgb(190, 76, 76);
 }
 
-.mainSearchContainer {
+.mainRecordContainer {
     height: 84vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.searchBar {
-    width: 80%;
-    margin: 2rem;
-    padding: .5rem;
-    font-size: 1rem;
-    background: #c0c0c0;
-    border: none;
-    border-radius: .5rem;
-    outline: none;
 }
