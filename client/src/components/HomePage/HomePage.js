@@ -8,6 +8,7 @@ import Notifications from "./pages/Notifications/Notifications"
 import Search from './pages/Search/Search'
 import Favorites from "./pages/Favorites/Favorites";
 import Record from "./pages/Record/Record";
+import EditProfile from "./pages/EditProfile/EditProfile";
 
 const HomePage = () => {
   const [length, setLength] = useState(0);
@@ -38,9 +39,9 @@ const HomePage = () => {
     if (page === 'Search') {
       return <Search />
     }
-    // if (page === 'Settings') {
-    //   return <Settings />
-    // }
+    if (page === 'EditProfile') {
+      return <EditProfile />
+    }
 
   };
 
@@ -121,12 +122,12 @@ const HomePage = () => {
             </li>
             <li className="listEle">
               <div
-                onClick={() => handlePageChange("Settings")}
+                onClick={() => handlePageChange("EditProfile")}
                 className={
-                  page === "Settings" ? "navContent activeNav" : "navContent"
+                  page === "EditProfile" ? "navContent activeNav" : "navContent"
                 }
               >
-                <div className="navLink">Settings</div>
+                <div className="navLink">Edit Profile</div>
               </div>
             </li>
           </ul>

@@ -17,8 +17,3 @@ mongoose.connect(connectionURL, {
 mongoose.set('debug', true);
 
 module.exports = mongoose.connection;
-
-
-
-///mongodb://localhost:27017/
-// mongodb + srv://bradfh:brad@cluster1.ieklju5.mongodb.net/
