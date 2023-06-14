@@ -9,7 +9,9 @@
 }
 
 .mainRecordContainer {
-    width: 40vw;
+    height: 84vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
