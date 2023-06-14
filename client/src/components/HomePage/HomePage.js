@@ -5,6 +5,8 @@ import Feed from "./pages/Feed/Feed";
 import Profile from "./pages/Profile/Profile";
 import pfp from "../photos/pfp placeholder.png";
 import Notifications from "./pages/Notifications/Notifications"
+import Posts from "./pages/Profile/Posts/Posts";
+import Recordings from "./pages/Profile/Recordings/Recordings";
 
 const HomePage = () => {
   // <img className='imgNav' src={pfpNav}></img>
@@ -26,6 +28,12 @@ const HomePage = () => {
     }
     if (page === 'Notifications') {
       return <Notifications />
+    }
+    if (page === 'Recordings') {
+      return <Recordings username="@username" />
+    }
+    if (page === 'Posts') {
+      return <Posts username="@username" />
     }
   };
 
