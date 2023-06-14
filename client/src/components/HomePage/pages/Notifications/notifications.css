@@ -1,11 +1,11 @@
 .notificationHeader {
     text-align: center;
     width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
     padding-block: 1rem;
     color: var(--black);
-    border-bottom: solid white 1px;
-    background: rgb(190,76,76);
+    border-bottom: solid rgba(255, 255, 255, 0.232) 1px;
+    background: rgb(190, 76, 76);
 }
 
 .mainNotificationContainer {
