@@ -5,6 +5,8 @@ import Feed from "./pages/Feed/Feed";
 import Profile from "./pages/Profile/Profile";
 import pfp from "../photos/pfp placeholder.png";
 import Notifications from "./pages/Notifications/Notifications"
+import Posts from "./pages/Profile/Posts/Posts";
+import Recordings from "./pages/Profile/Recordings/Recordings";
 import Search from './pages/Search/Search'
 import Favorites from "./pages/Favorites/Favorites";
 import Record from "./pages/Record/Record";
@@ -36,12 +38,21 @@ const HomePage = () => {
     if (page === 'Notifications') {
       return <Notifications />
     }
+
+    if (page === 'Recordings') {
+      return <Recordings username="@username" />
+    }
+    if (page === 'Posts') {
+      return <Posts username="@username" />
+    }
+
     if (page === 'Search') {
       return <Search />
     }
     if (page === 'EditProfile') {
       return <EditProfile />
     }
+
 
   };
 

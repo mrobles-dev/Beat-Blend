@@ -47,10 +47,8 @@ app.post('/signup', async (req, res) => {
 app.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
-
-    console.log("Username:", username); //! REMOVE
-    console.log("Password:", password); //! REMOVE
-        
+    console.log(req.body);
+    
     const user = await User.findOne({ username });
     if (!user) {
       return res.status(401).json({ message: 'Invalid username' });
@@ -61,12 +59,8 @@ app.post('/login', async (req, res) => {
     if (!isPasswordValid) {
       return res.status(401).json({ message: 'Invalid password' });
     }
-
-    console.log("User ID:", user._id); //! REMOVE
     
-    const token = jwt.sign({ userId: user._id, username: user.username }, 'mysecretssshhhhhhh');
-
-    console.log("Token:", token); //! REMOVE
+    const token = jwt.sign({ userId: user._id}, 'your-secret-key');
     
     res.json({ token });
   } catch (error) {

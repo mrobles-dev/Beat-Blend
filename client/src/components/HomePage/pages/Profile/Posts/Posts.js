@@ -7,7 +7,7 @@ import download from "../../../../photos/download.png";
 import heart from "../../../../photos/heart.png";
 import liked from "../../../../photos/heart full.png";
 
-const Posts = () => {
+const Posts = ({ username }) => {
   const [like, setLike] = useState(false);
 
   const handleLike = () => {
@@ -24,7 +24,7 @@ const Posts = () => {
           <div className="topBar">
             <div className="userInfo">
               <img className="pfp" src={pfp}></img>
-              <div className="username">@username | 1h</div>
+              <div className="username">{`${username}`}</div>
             </div>
             <div className="likeBtn">
               <img
@@ -50,7 +50,7 @@ const Posts = () => {
           <div className="topBar">
             <div className="userInfo">
               <img className="pfp" src={pfp}></img>
-              <div className="username">@username | 1h</div>
+            <div className="username">{`${username}`}</div>
             </div>
             <div className="likeBtn">
               <img

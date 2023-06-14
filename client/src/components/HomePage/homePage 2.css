@@ -1,0 +1,276 @@
+.mainHomeContainer {
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    156deg,
+    #000000 0%,
+    #3b3b3b 31%,
+    #606060 80%,
+    #7c7c7c 100%
+  );
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  overflow: hidden;
+}
+
+.leftContainer {
+  height: 100%;
+  width: 30vw;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.navHeader {
+  text-align: right;
+  width: 100%;
+  /* font-size: 3rem; */
+  font-size: 2rem;
+  padding: 1rem 3.25rem 1rem 1rem;
+  color: var(--black);
+  /* border-bottom: solid white 1px; */
+  border-bottom: solid rgba(255, 255, 255, 0.266) 1px;
+  background: rgb(190, 76, 76);
+}
+
+.leftContainer ul {
+  width: fit-content;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.leftContainer li {
+  width: 100%;
+  font-size: 2rem;
+  list-style: none;
+  padding: 1rem 3rem;
+  color: var(--gray);
+  text-align: right;
+}
+
+.listEle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navContent {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.5s, color 0.5s, transform 0.5s;
+}
+
+.navContent:hover {
+  cursor: pointer;
+  color: rgb(218, 218, 218);
+  background-color: var(--red);
+}
+
+.navLink {
+  font-size: 1.25rem;
+}
+
+.activeNav {
+  color: rgb(218, 218, 218);
+  background-color: var(--red);
+  transform: scale(1.1);
+}
+
+.middleContainer {
+  height: 100%;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: solid rgba(255, 255, 255, 0.232) 1px;
+  border-left: solid rgba(255, 255, 255, 0.232) 1px;
+}
+
+.rightContainer {
+  height: 100%;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.newPostHeader {
+  text-align: left;
+  width: 100%;
+  /* font-size: 3rem; */
+  font-size: 2rem;
+  padding: 1rem 1rem 1rem 3.25rem;
+  color: var(--black);
+    /* border-bottom: solid white 1px; */
+  border-bottom: solid rgba(255, 255, 255, 0.232) 1px;
+  background: #be4c4c;
+}
+
+.formContainer {
+  width: 83%;
+  margin: 2rem;
+  padding: 1rem;
+  background: #c0c0c0;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* box-shadow: 0px 0px 30px 0px #d98282; */
+  box-shadow: 0px 0px 30px 0px #00000088;
+}
+
+.formContainer form {
+  display: flex;
+  justify-content: center;
+  /* width: 100%; */
+  flex-direction: column;
+}
+
+.form textarea {
+  overflow: hidden;
+  resize: none;
+  width: 100%;
+  padding-block: 0.25rem;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+}
+
+.red {
+  color: red;
+  font-weight: 600;
+}
+
+.green {
+  color: green;
+  font-weight: 600;
+}
+
+.uploadContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.upload {
+  margin: 1rem 0 0 0;
+  padding: 0.75rem 1.25rem;
+  background: var(--red);
+  max-width: fit-content;
+  border-radius: 0.5rem;
+  color: #272727;
+}
+
+.post {
+  text-align: center;
+  margin: 1rem 0 0 0;
+  padding: 0.75rem 1.25rem;
+  background: var(--red);
+  border-radius: 0.5rem;
+  font-size: 150%;
+}
+
+.postBtn {
+  transition: transform 0.5s;
+}
+
+.bigPostBtn {
+  transition: transform 0.5s;
+}
+
+.postBtn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.bigPostBtn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 1000px) {
+  .mainFeedContainer {
+    height: 100vh;
+    max-width: fit-content;
+    flex-direction: column;
+  }
+
+  .leftContainer,
+  .rightContainer {
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .middleContainer {
+    width: 100%;
+    border-right: none;
+    border-left: none;
+  }
+
+  .feedHeader {
+    font-size: 2rem;
+  }
+
+  .feed {
+    height: auto;
+    width: 100%;
+  }
+
+  .feedElement {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .recordingContainer {
+    width: 100%;
+    max-width: fit-content;
+  }
+
+  .playBar {
+    width: 100%;
+    max-width: fit-content;
+  }
+
+  .pfp,
+  .playBtn,
+  .download {
+    max-width: 5%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mainFeedContainer {
+    height: 100vh;
+    max-width: fit-content;
+    width: 100%;
+    margin: 0;
+    flex-direction: column;
+  }
+
+  .leftContainer,
+  .rightContainer {
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+  .middleContainer {
+    width: 100%;
+    /* border-right: none;
+      border-left: none; */
+  }
+
+  .feedHeader {
+    width: 100%;
+    font-size: 1.5rem;
+    padding-block: 0.5rem;
+  }
+}
