@@ -3,13 +3,13 @@ import "./recordings.css";
 import playBar from '../../../../photos/small play bar.png'
 import playBtn from '../../../../photos/play button.png'
 
-const Recordings = () => {
+const Recordings = ({ username }) => {
   return (
     <>
       <div className='mainRecordingContainer'>
         <div className="recordingElement">
           <div className="recordingTitle">
-            Title
+            {username}
           </div>
           <div className="recordingDate">
             00/00/0000 | 00:00
