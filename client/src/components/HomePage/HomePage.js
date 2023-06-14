@@ -7,9 +7,11 @@ import pfp from "../photos/pfp placeholder.png";
 import Notifications from "./pages/Notifications/Notifications"
 import Posts from "./pages/Profile/Posts/Posts";
 import Recordings from "./pages/Profile/Recordings/Recordings";
+import Search from './pages/Search/Search'
+import Favorites from "./pages/Favorites/Favorites";
+import Record from "./pages/Record/Record";
 
 const HomePage = () => {
-  // <img className='imgNav' src={pfpNav}></img>
   const [length, setLength] = useState(0);
   function countLength() {
     const textarea = document.getElementById("textInput");
@@ -26,15 +28,31 @@ const HomePage = () => {
     if (page === "Profile") {
       return <Profile />;
     }
+    if (page === 'Record') {
+      return <Record />
+    }
+    if (page === 'Favorites') {
+      return <Favorites />
+    }
     if (page === 'Notifications') {
       return <Notifications />
     }
+
     if (page === 'Recordings') {
       return <Recordings username="@username" />
     }
     if (page === 'Posts') {
       return <Posts username="@username" />
     }
+
+    if (page === 'Search') {
+      return <Search />
+    }
+    // if (page === 'Settings') {
+    //   return <Settings />
+    // }
+
+
   };
 
   const handlePageChange = (pageName) => {
@@ -72,12 +90,12 @@ const HomePage = () => {
             </li>
             <li className="listEle">
               <div
-                onClick={() => handlePageChange("Recordings")}
+                onClick={() => handlePageChange("Record")}
                 className={
-                  page === "Recordings" ? "navContent activeNav" : "navContent"
+                  page === "Record" ? "navContent activeNav" : "navContent"
                 }
               >
-                <div className="navLink">Recordings</div>
+                <div className="navLink">Record</div>
               </div>
             </li>
             <li className="listEle">
