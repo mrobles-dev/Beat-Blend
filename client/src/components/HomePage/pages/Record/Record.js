@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import { AudioRecorder, useAudioRecorder } from "react-audio-voice-recorder";
 import "./record.css";
 
+
 export default function App() {
   const recorderControls = useAudioRecorder(
     {
