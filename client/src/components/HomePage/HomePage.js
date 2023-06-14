@@ -6,6 +6,8 @@ import Profile from "./pages/Profile/Profile";
 import pfp from "../photos/pfp placeholder.png";
 import Notifications from "./pages/Notifications/Notifications"
 import Search from './pages/Search/Search'
+import Favorites from "./pages/Favorites/Favorites";
+import Record from "./pages/Record/Record";
 
 const HomePage = () => {
   const [length, setLength] = useState(0);
@@ -24,12 +26,12 @@ const HomePage = () => {
     if (page === "Profile") {
       return <Profile />;
     }
-    // if (page === 'Recording') {
-    //   return <Recording />
-    // }
-    // if (page === 'Favorites') {
-    //   return <Favorites />
-    // }
+    if (page === 'Record') {
+      return <Record />
+    }
+    if (page === 'Favorites') {
+      return <Favorites />
+    }
     if (page === 'Notifications') {
       return <Notifications />
     }
@@ -77,12 +79,12 @@ const HomePage = () => {
             </li>
             <li className="listEle">
               <div
-                onClick={() => handlePageChange("Recording")}
+                onClick={() => handlePageChange("Record")}
                 className={
-                  page === "Recording" ? "navContent activeNav" : "navContent"
+                  page === "Record" ? "navContent activeNav" : "navContent"
                 }
               >
-                <div className="navLink">Recordings</div>
+                <div className="navLink">Record</div>
               </div>
             </li>
             <li className="listEle">
