@@ -17,14 +17,78 @@
 
 .stopRecord {
     background: var(--gray);
-    color: #272727;
-    font-size: 1rem;
+    background-color: #be4c4c;
+    transform: scale(.9);
+    font-size: 1.2rem;
+    margin: 1rem;
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    transition: background-color .5s, box-shadow .5s, transform .5s;
+
+}
+
+
+.playAll {
+    background-color: #be4c4c;
+    transform: scale(.9);
+    /* box-shadow: 0px 0px 15px 0px #d98282; */
+    font-size: 1.2rem;
     margin: 1rem;
     padding: .75rem 1.5rem;
     border-radius: .5rem;
     transition: background-color .5s, box-shadow .5s, transform .5s;
 }
 
-.playAll {
-    
+.playAll:hover {
+    background-color: #be4c4c;
+}
+
+.stop {
+    background-color: #be4c4c;
+    transform: scale(.9);
+    /* box-shadow: 0px 0px 15px 0px #d98282; */
+    font-size: 1.2rem;
+    margin: 1rem;
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    transition: background-color .5s, box-shadow .5s, transform .5s;
+}
+
+.stop:hover {
+    background-color: #be4c4c;
+}
+
+.delete {
+    background-color: #be4c4c;
+    transform: scale(.9);
+    /* box-shadow: 0px 0px 15px 0px #d98282; */
+    font-size: 1.2rem;
+    margin: 1rem;
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    transition: background-color .5s, box-shadow .5s, transform .5s;
+}
+
+.delete:hover {
+    background-color: #be4c4c;
+}
+
+.download {
+    background-color: #be4c4c;
+    transform: scale(.9);
+    /* box-shadow: 0px 0px 15px 0px #d98282; */
+    font-size: 1.2rem;
+    margin: 1rem;
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    transition: background-color .5s, box-shadow .5s, transform .5s;
+}
+
+.download:hover {
+    background-color: #be4c4c;
+}
+
+
+#mic {
+    color: blue;
 }
