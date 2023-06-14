@@ -2,7 +2,7 @@ const db = require("../config/connection");
 const userSeeds = require ("./userSeeds.json")
 const commentSeeds = require ("./commentSeeds.json")
 
-const { User, Comment } = require("../models");
+const { User } = require("../models");
 
 db.once("open", async () => {
   

@@ -21,8 +21,8 @@ export default function App() {
     recorderControls.stopRecording();
   }, []);
 
-  const addAudioElement = (blob) => {
-    const url = URL.createObjectURL(blob);
+  const addAudioElement = (beepbop) => {
+    const url = URL.createObjectURL(beepbop);
     const audio = new Audio(url);
     setAudioElements([...audioElements, audio]);
   };
@@ -85,23 +85,33 @@ export default function App() {
 
   return (
     <div>
-      <Record /> {/* Render the Record component */}
+      <Record/> {/* Render the Record component */}
       <AudioRecorder
-        onRecordingComplete={(blob) => addAudioElement(blob)}
+        onRecordingComplete={(beepbop) => addAudioElement(beepbop)}
         recorderControls={recorderControls}
         showVisualizer={true}
       />
       <br />
-      <button onClick={recorderControls.stopRecording}>Stop recording</button>
+      <button className="stopRecord" onClick={recorderControls.stopRecording}>
+        Stop recording
+      </button>
       <br />
-      <button onClick={handlePlayback}>Play All</button>
+      <button className="playAll" onClick={handlePlayback}>
+        Play All
+      </button>
       <div>
         {audioElements.map((audio, index) => (
           <div key={index}>
             <audio src={audio.src} controls />
-            <button onClick={() => handleStop(index)}>Stop</button>
-            <button onClick={() => handleDelete(index)}>Delete</button>
-            <button onClick={() => handleDownload(index)}>Download</button>
+            <button className="stop" onClick={() => handleStop(index)}>
+              Stop
+            </button>
+            <button className="delete" onClick={() => handleDelete(index)}>
+              Delete
+            </button>
+            <button className="download" onClick={() => handleDownload(index)}>
+              Download
+            </button>
           </div>
         ))}
       </div>
