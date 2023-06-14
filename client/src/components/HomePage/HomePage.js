@@ -5,9 +5,9 @@ import Feed from "./pages/Feed/Feed";
 import Profile from "./pages/Profile/Profile";
 import pfp from "../photos/pfp placeholder.png";
 import Notifications from "./pages/Notifications/Notifications"
+import Search from './pages/Search/Search'
 
 const HomePage = () => {
-  // <img className='imgNav' src={pfpNav}></img>
   const [length, setLength] = useState(0);
   function countLength() {
     const textarea = document.getElementById("textInput");
@@ -24,9 +24,22 @@ const HomePage = () => {
     if (page === "Profile") {
       return <Profile />;
     }
+    // if (page === 'Recording') {
+    //   return <Recording />
+    // }
+    // if (page === 'Favorites') {
+    //   return <Favorites />
+    // }
     if (page === 'Notifications') {
       return <Notifications />
     }
+    if (page === 'Search') {
+      return <Search />
+    }
+    // if (page === 'Settings') {
+    //   return <Settings />
+    // }
+
   };
 
   const handlePageChange = (pageName) => {
@@ -64,9 +77,9 @@ const HomePage = () => {
             </li>
             <li className="listEle">
               <div
-                onClick={() => handlePageChange("Recordings")}
+                onClick={() => handlePageChange("Recording")}
                 className={
-                  page === "Recordings" ? "navContent activeNav" : "navContent"
+                  page === "Recording" ? "navContent activeNav" : "navContent"
                 }
               >
                 <div className="navLink">Recordings</div>
