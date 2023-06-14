@@ -19,10 +19,10 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  thoughts: [
+  comments: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Thought",
+      ref: "Comment",
     },
   ],
 });
@@ -37,7 +37,8 @@ userSchema.pre("save", async function (next) {
 });
 
 userSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password);
+  const trimmedPassword = password.trim();
+  return bcrypt.compare(trimmedPassword, this.password);
 };
 
 const User = model("User", userSchema);

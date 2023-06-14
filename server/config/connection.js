@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+require('dotenv').config();
 
-const connectionURL = 'mongodb+srv://bradfh:brad@cluster1.ieklju5.mongodb.net/'
+const connectionURL = process.env.DB_LINK;
 
 mongoose.connect(connectionURL, {
   useNewUrlParser: true,
@@ -13,4 +14,11 @@ mongoose.connect(connectionURL, {
   console.error('Error connecting to MongoDB', error);
 });
 
+mongoose.set('debug', true);
+
 module.exports = mongoose.connection;
+
+
+
+///mongodb://localhost:27017/
+// mongodb + srv://bradfh:brad@cluster1.ieklju5.mongodb.net/

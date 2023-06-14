@@ -1,0 +1,90 @@
+.feedHeader {
+  text-align: center;
+  width: 100%;
+  font-size: 2rem;
+  padding-block: 1rem;
+  color: var(--black);
+  border-bottom: solid rgba(255, 255, 255, 0.232) 1px;
+  background: rgb(190, 76, 76);
+}
+
+.feed {
+  height: 80.55vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 1rem;
+  overflow-y: scroll;
+}
+
+.feedElement {
+  height: 50%;
+  width: 75%;
+  margin: 1rem;
+  padding: 1rem;
+  background: #c0c0c0;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0px 0px 30px 0px #00000088;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userInfo {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.pfp {
+  max-width: 10%;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.username:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.recordingContainer {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 97.5%;
+  background: var(--gray);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.playBtn {
+  max-width: 4%;
+}
+
+.download {
+  max-width: 5%;
+}
+
+.likeBtn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.heart {
+  max-width: 20%;
+  margin-bottom: 0.5rem;
+  /* margin-right: .5rem; */
+  display: flex;
+}
+
+.heart:hover {
+  cursor: pointer;
+}
