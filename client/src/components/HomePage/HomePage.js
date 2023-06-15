@@ -6,11 +6,12 @@ import Profile from "./pages/Profile/Profile";
 import pfp from "../photos/pfp placeholder.png";
 import Notifications from "./pages/Notifications/Notifications"
 import Posts from "./pages/Profile/Posts/Posts";
-import Recordings from "./pages/Profile/Recordings/Recordings";
+import Recordings from "./pages/Profile/myRecordings/myRecordings";
 import Search from './pages/Search/Search'
 import Favorites from "./pages/Favorites/Favorites";
 import Record from "./pages/Record/Record";
-import EditProfile from "./pages/EditProfile/EditProfile";
+import EditProfile from "./pages/EditProfile/EditProfile"
+
 
 const HomePage = () => {
   const [length, setLength] = useState(0);

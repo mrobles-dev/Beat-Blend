@@ -9,7 +9,7 @@ const myRecordings = () => {
       <div className='mainRecordingContainer'>
         <div className="recordingElement">
           <div className="recordingTitle">
-            {username}
+            Title
           </div>
           <div className="recordingDate">
             00/00/0000 | 00:00

@@ -26,7 +26,7 @@ const EditProfile = () => {
               /150
             </p>
             <textarea
-              id='textInput'
+              id="textInput"
               className="bioInput"
               type="text"
               placeholder="Enter Bio (150 char max)"
@@ -80,7 +80,8 @@ const EditProfile = () => {
             </div>
           </div>
         </div>
-      <div className="saveBtn">Save</div>
+        <div className="saveBtn">Save</div>
+
       </div>
     </>
   );
