@@ -13,6 +13,7 @@ export default function App() {
     {
       noiseSuppression: true,
       echoCancellation: true,
+     
     },
     (err) => console.table(err)
   );
@@ -85,36 +86,44 @@ export default function App() {
   };
 
   return (
-    <div>
-      <Record/> {/* Render the Record component */}
-      <AudioRecorder
-        onRecordingComplete={(beepbop) => addAudioElement(beepbop)}
-        recorderControls={recorderControls}
-        showVisualizer={true}
-      />
-      <br />
-      <button className="stopRecord" onClick={recorderControls.stopRecording}>
-        Stop recording
-      </button>
-      <br />
-      <button className="playAll" onClick={handlePlayback}>
-        Play All
-      </button>
-      <div>
-        {audioElements.map((audio, index) => (
-          <div key={index}>
-            <audio src={audio.src} controls />
-            <button className="stop" onClick={() => handleStop(index)}>
-              Stop
-            </button>
-            <button className="delete" onClick={() => handleDelete(index)}>
-              Delete
-            </button>
-            <button className="download" onClick={() => handleDownload(index)}>
-              Download
-            </button>
-          </div>
-        ))}
+    <div className="centered">
+      <div className="rec">
+        <Record /> {/* Render the Record component */}
+        <AudioRecorder
+          classes={{
+            AudioRecorderClass: "mic",
+          }}
+          onRecordingComplete={(beepbop) => addAudioElement(beepbop)}
+          recorderControls={recorderControls}
+          showVisualizer={true}
+        />
+        <br />
+        <button className="stopRecord" onClick={recorderControls.stopRecording}>
+          Stop recording
+        </button>
+        <br />
+        <button className="playAll" onClick={handlePlayback}>
+          Play All
+        </button>
+        <div>
+          {audioElements.map((audio, index) => (
+            <div key={index}>
+              <audio src={audio.src} controls />
+              <button className="stop" onClick={() => handleStop(index)}>
+                Stop
+              </button>
+              <button className="delete" onClick={() => handleDelete(index)}>
+                Delete
+              </button>
+              <button
+                className="download"
+                onClick={() => handleDownload(index)}
+              >
+                Download
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
