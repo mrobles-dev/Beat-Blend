@@ -12,6 +12,7 @@ import Favorites from "./pages/Favorites/Favorites";
 import Record from "./pages/Record/Record";
 import EditProfile from "./pages/EditProfile/EditProfile"
 
+
 const HomePage = () => {
   const [length, setLength] = useState(0);
   function countLength() {

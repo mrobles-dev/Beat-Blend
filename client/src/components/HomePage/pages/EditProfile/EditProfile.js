@@ -81,6 +81,7 @@ const EditProfile = () => {
           </div>
         </div>
         <div className="saveBtn">Save</div>
+
       </div>
     </>
   );

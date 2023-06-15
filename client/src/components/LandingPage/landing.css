@@ -55,6 +55,7 @@
   border-radius: 0.4rem;
   border: none;
   font-family: "Work Sans", sans-serif;
+  outline: none;
 }
 
 .buttons {

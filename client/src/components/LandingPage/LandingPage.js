@@ -31,6 +31,7 @@ const LandingPage = () => {
       } else {
         const data = await response.json();
         console.error(data.message);
+        alert('Email already in use')
       }
     } catch (error) {
       console.error(error);
@@ -58,6 +59,7 @@ const LandingPage = () => {
       } else {
         const data = await response.json();
         console.error(data.message);
+        alert('Invalid credentials')
       }
     } catch (error) {
       console.error(error);
